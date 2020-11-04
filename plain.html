@@ -1,0 +1,77 @@
+<script>
+      const humanCount = 1;
+        const computerCount = 1;
+   
+
+    function computerPlay(){
+        const random = Math.floor(Math.random() * 3);
+        if (random === 0){
+            return 'Rock'
+        }
+        if (random === 1){
+            return 'Paper'
+        }
+        if (random === 2){
+            return 'Scissors'
+        }
+    }
+    function playRound(playerSelection, computerSelection) {
+        if ( playerSelection.toLowerCase() === 'rock' && computerSelection === 'Rock' ){
+            return alert('Tie')
+        }
+        else if ( playerSelection.toLowerCase() === 'rock' && computerSelection === 'Paper' ){
+            return alert('Comp won,paper beats rock') + computerCount + 1;
+        }
+        else if ( playerSelection.toLowerCase() === 'rock' && computerSelection ==='Scissors' ){
+            return alert('Player won,rock beats scissors') + humanCount + 1;
+        }
+        else if ( playerSelection.toLowerCase() === 'paper' && computerSelection === 'Paper' ){
+            return alert('tie')
+        }
+        else if ( playerSelection.toLowerCase() === 'paper' && computerSelection === 'Rock' ){
+            return alert('Player won,paper beats rock') + humanCount + 1;
+        }
+        else if ( playerSelection.toLowerCase() === 'paper' && computerSelection === 'Scissors' ){
+            return alert('Comp won,scissors beat paper') + computerCount + 1;
+        }
+        else if ( playerSelection.toLowerCase() === 'scissors' && computerSelection === 'Scissors' ){
+            return alert('tie')
+        }
+        else if ( playerSelection.toLowerCase() === 'scissors' && computerSelection === 'Rock' ){
+            return alert('comp won, rock beats  scissors') + computerCount + 1;
+        }
+        else if ( playerSelection.toLowerCase() === 'scissors' && computerSelection ==='Paper' ){
+            return alert('player won,scissors beat paper') + humanCount + 1;
+        }
+        else {
+            return alert('something went wrong')
+        }
+    }
+    function game(){
+        const playerSelection = prompt('Rock,paper or scissors?')
+        const computerSelection = computerPlay()
+        playRound(playerSelection, computerSelection);
+       }
+
+       function gameEnd(humanCount, computerCount){
+            if (humanCount > computerCount){
+                return alert('Human won')
+                }
+                else if (computerCount > humanCount)
+                return alert('Computer won')
+                else if (computerCount === humanCount){
+                    return alert('tie,replay the game')
+                }
+                else{
+                    return alert('something went wrong')
+                }
+       }
+          game()
+          game()
+          game()
+          game()
+          game()
+          gameEnd()  
+        
+    
+</script>
